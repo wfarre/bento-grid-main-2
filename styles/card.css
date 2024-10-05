@@ -1,0 +1,280 @@
+.card {
+  box-shadow: 0px 0px 8px hsl(0, 0%, 0%, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  padding-bottom: 20px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.card__title {
+  font-size: var(--text-2xl);
+  font-weight: bolder;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex.reverse {
+  flex-direction: row-reverse;
+}
+
+.flex.flex-col.reverse {
+  flex-direction: column-reverse;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card--yellow {
+  background-color: var(--yellow);
+}
+
+.card--light-yellow {
+  background-color: var(--light-yellow);
+}
+
+.card--light-yellow em {
+  color: var(--purple);
+}
+
+.card--purple {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.card--purple em {
+  color: var(--yellow);
+}
+
+.card--light-purple {
+  background-color: var(--light-purple);
+}
+
+/* header */
+.card:nth-child(1) {
+  text-align: center;
+  padding-top: 62px;
+  padding-bottom: 62px;
+
+  .image-wrapper {
+    height: 32px;
+    width: 200px;
+  }
+
+  .card__title {
+    font-size: var(--text-3xl);
+  }
+
+  em {
+    font-style: normal;
+  }
+
+  p {
+    color: var(--light-yellow);
+  }
+}
+
+/* center-left-a / Manage multiple accounts */
+.card:nth-child(2) {
+  padding-right: 0;
+  justify-content: flex-end;
+
+  .image-wrapper {
+    height: 66px;
+
+    img {
+      aspect-ratio: 633/134;
+      object-fit: cover;
+      object-position: 0;
+    }
+  }
+}
+
+/* center-right-a / Maintain a consistent posting schedule */
+.card:nth-child(3) {
+  padding-bottom: 0;
+
+  .image-wrapper {
+    height: 135px;
+    width: 210px;
+    img {
+      aspect-ratio: 416/314;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+}
+
+/* aside-top-right / schedule to social media */
+.card:nth-child(4) {
+  justify-content: center;
+  text-align: center;
+
+  .card__title {
+    font-size: var(--text-xl);
+  }
+
+  .image-wrapper {
+    width: 100%;
+    aspect-ratio: 456/402;
+
+    img {
+      aspect-ratio: 456/402;
+      object-fit: cover;
+      object-position: 0;
+    }
+  }
+}
+
+/* aside-bottom-right / Grow followers with non-stop content */
+.card:nth-child(5) {
+  flex-direction: column-reverse;
+  padding: 1rem var(--padding-xl);
+  text-align: center;
+
+  .image-wrapper {
+    height: 200px;
+    aspect-ratio: 456/402;
+  }
+}
+
+/* center-left-a / Manage multiple accounts and platforms. */
+.card:nth-child(6) {
+  padding: 24px;
+
+  .card__title {
+    font-size: var(--text-3xl);
+  }
+
+  .image-wrapper {
+    width: 180px;
+    aspect-ratio: 358/134;
+  }
+}
+
+/* aside-top-left / Create and schedule content quicker */
+.card:nth-child(7) {
+  padding: 1.5rem;
+
+  .image-wrapper {
+    width: 195px;
+    aspect-ratio: 382/182;
+
+    img {
+      aspect-ratio: 358/134;
+      object-fit: contain;
+    }
+  }
+}
+
+/* aside-bottom-left / Write your content using AI */
+.card:nth-child(8) {
+  padding: 1.5rem;
+  .card__title {
+    font-size: 1.75rem;
+  }
+
+  .image-wrapper {
+    width: 220px;
+    aspect-ratio: 440/446;
+
+    img {
+      aspect-ratio: 440/446;
+      object-fit: scale-down;
+      object-position: 0;
+    }
+  }
+}
+
+@media all and (min-width: 790px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card:nth-child(1) {
+    grid-area: header;
+  }
+
+  .card:nth-child(2) {
+    grid-area: center-left-a;
+  }
+
+  .card:nth-child(3) {
+    grid-area: center-right-a;
+    .image-wrapper {
+      height: 100px;
+      width: auto;
+    }
+  }
+
+  .card:nth-child(4) {
+    grid-area: aside-top-right;
+    padding-right: 0;
+    text-align: left;
+    padding-left: var(--padding-xl);
+
+    .card__title {
+      font-size: var(--text-xl);
+      padding-right: var(--padding-xl);
+    }
+
+    p {
+      padding-right: var(--padding-xl);
+    }
+
+    .image-wrapper {
+      height: 320px;
+    }
+  }
+
+  .card:nth-child(5) {
+    grid-area: aside-bottom-right;
+    flex-direction: row-reverse;
+    padding: 1.5rem;
+    text-align: left;
+  }
+
+  .card:nth-child(6) {
+    grid-area: center-left-b;
+  }
+
+  .card:nth-child(7) {
+    grid-area: aside-top-left;
+  }
+
+  .card:nth-child(8) {
+    grid-area: aside-bottom-left;
+
+    .card__title {
+      padding-right: var(--padding-xl);
+    }
+  }
+}

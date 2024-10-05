@@ -1,0 +1,55 @@
+@import url("./card.css");
+@import url("./base.css");
+
+@font-face {
+  font-family: "DMSans";
+  src: url("../assets/fonts/static/DMSans-Regular.ttf"),
+    url("../assets/fonts/static/DMSans-MediumItalic.ttf"),
+    url("../assets/fonts/static/DMSans-Medium.ttf");
+}
+
+body {
+  font-family: "DMSans";
+  position: relative;
+  background-color: rgb(245, 245, 245);
+}
+
+.bento {
+  display: grid;
+  max-width: 1120px;
+  gap: 2rem;
+  margin-inline: 1rem;
+}
+
+.attribution {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media all and (min-width: 790px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .bento {
+    grid-template-areas:
+      "aside-top-left header header aside-top-right"
+      "aside-top-left header header aside-top-right"
+      "aside-top-left center-left-a center-right-a aside-top-right"
+      "aside-bottom-left center-left-a center-right-a aside-top-right"
+      "aside-bottom-left center-left-b aside-bottom-right aside-bottom-right"
+      "aside-bottom-left center-left-b aside-bottom-right aside-bottom-right";
+  }
+}
